@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Autowire by the name variable -->
+	<!-- <bean class="com.te.springcoredemo.pojo.Employee" id="employee" -->
+	<!-- autowire="byName"> -->
+	<!-- <property name="empId" value="100" /> -->
+	<!-- <property name="empName" value="Sarah" /> -->
+
+	<!-- Autowire by the type of object -->
+	<!-- <bean class="com.te.springcoredemo.pojo.Employee" id="employee" -->
+	<!-- autowire="byType"> -->
+	<!-- <property name="empId" value="100" /> -->
+	<!-- <property name="empName" value="Sarah" /> -->
+
+	<!-- </bean> -->
+
+
+	<!-- Autowire by the constructor -->
+	<bean class="com.te.springcoredemo.pojo.Employee" id="employee"
+		autowire="constructor">
+<!-- 		<constructor-arg name="empId" value="100" /> -->
+<!-- 		<constructor-arg name="empName" value="Sarah" /> -->
+
+		<property name="empId" value="100" />
+		<property name="empName" value="Sarah" />
+
+	</bean>
+
+
+	<bean class="com.te.springcoredemo.pojo.Address" id="address">
+		<property name="houseNum" value="420/B" />
+		<property name="street" value="21st cross" />
+		<property name="city" value="Bangalore" />
+		<property name="state" value="Karnataka" />
+	</bean>
+
+	<!-- Ambiguity for by type -->
+	<bean class="com.te.springcoredemo.pojo.Address" id="address1">
+	<property name="houseNum" value="420/C" />
+	<property name="street" value="21st cross" />
+	<property name="city" value="Bangalore" />
+	<property name="state" value="Karnataka" />
+	</bean>
+
+
+</beans>

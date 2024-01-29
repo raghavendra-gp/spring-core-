@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<context:component-scan base-package="com.te.springcoredemo"></context:component-scan>
+	<bean class="com.te.springcoredemo.pojo.Student" id="student">
+		<property name="stuId" value="10" />
+		<property name="stuName" value="Bosco" />
+	</bean>
+
+	<bean class="com.te.springcoredemo.pojo.Student" id="student1">
+		<property name="stuId" value="20" />
+		<property name="stuName" value="John" />
+	</bean>
+
+	<bean class="com.te.springcoredemo.pojo.Address" id="address">
+		<property name="houseNum" value="420/B" />
+		<property name="street" value="21st cross" />
+		<property name="city" value="Bangalore" />
+		<property name="state" value="Karnataka" />
+	</bean>
+	
+		<bean class="com.te.springcoredemo.pojo.Employee" id="employee">
+	<constructor-arg name="empId" value="100" />
+	<constructor-arg name="empName" value="Sarah" />
+	<constructor-arg name="address" ref="address"></constructor-arg>
+</bean>
+</beans>
